@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WAES_Test", "WAES_Test\WAES_Test.csproj", "{AEBCC12A-C324-4447-93D7-25A2AC295AA9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEBCC12A-C324-4447-93D7-25A2AC295AA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEBCC12A-C324-4447-93D7-25A2AC295AA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEBCC12A-C324-4447-93D7-25A2AC295AA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEBCC12A-C324-4447-93D7-25A2AC295AA9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E208E84-E91F-418E-8DFD-81B084EA742A}
+	EndGlobalSection
+EndGlobal
