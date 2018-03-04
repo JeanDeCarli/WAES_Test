@@ -72,15 +72,15 @@ namespace WAES_Test.Controllers
         }
 
         [Route("{id}/left")]
-        [ResponseType(typeof(Data))]
-        public IHttpActionResult InsertLeft(int id, [FromBody] string content)
+        [HttpPost]
+        public IHttpActionResult InsertLeft(int id, HttpRequestMessage content)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var data = new Data() {Id = id, EncodedJSON = content, Side = "Left" };
+            var data = new Data() {Id = id, EncodedJSON = content.Content.ReadAsStringAsync().Result, Side = "Left" };
 
             db.Data.Add(data);
 

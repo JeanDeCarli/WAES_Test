@@ -204,6 +204,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ADO_WAES.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\ContentModel.cs" />
     <Compile Include="Models\Data.cs">
       <DependentUpon>ADO_WAES.tt</DependentUpon>
     </Compile>
