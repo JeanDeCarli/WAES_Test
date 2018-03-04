@@ -26,7 +26,7 @@ namespace WAES_Test.Controllers
 
         [Route("{id}")]
         [ResponseType(typeof(Data))]
-        public IHttpActionResult GetData(int id)
+        public IHttpActionResult DiffContent(int id)
         {
             Data data = db.Data.Find(id);
             if (data == null)
@@ -47,12 +47,12 @@ namespace WAES_Test.Controllers
                 return BadRequest(ModelState);
             }
             // Creates the object with all the data needed
-            var data = new Data() { Id = id, EncodedJSON = content.Content.ReadAsStringAsync().Result, Side = APIsHelper.Side.Left.ToString() };
+            var data = new Data() { Id = id, LeftSide = content.Content.ReadAsStringAsync().Result };
 
             try
             {
                 // Call the method that insert the record inside the database
-                APIsHelper.InsertData(data);
+                APIsHelper.InsertData(data, APIsHelper.Side.Left);
             }
             catch (DbUpdateException)
             {
@@ -79,12 +79,12 @@ namespace WAES_Test.Controllers
                 return BadRequest(ModelState);
             }
             // Creates the object with all the data needed
-            var data = new Data() { Id = id, EncodedJSON = content.Content.ReadAsStringAsync().Result, Side = APIsHelper.Side.Right.ToString() };
+            var data = new Data() { Id = id, RightSide = content.Content.ReadAsStringAsync().Result };
 
             try
             {
                 // Call the method that insert the record inside the database
-                APIsHelper.InsertData(data);
+                APIsHelper.InsertData(data, APIsHelper.Side.Right);
             }
             catch (DbUpdateException)
             {
@@ -100,7 +100,7 @@ namespace WAES_Test.Controllers
 
             return StatusCode(HttpStatusCode.Created);
         }
-
+        
         protected override void Dispose(bool disposing)
         {
             if (disposing)

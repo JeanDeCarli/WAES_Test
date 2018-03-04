@@ -20,18 +20,27 @@ namespace WAES_Test.Helper
 
         #region Methods
 
-        public static void InsertData(Data data)
+        public static void InsertData(Data data, Side side)
         {
             var db = new WAESAssignmentDBEntities();
             var existentData = db.Data.Find(data.Id);
 
             if (existentData != null)
             {
-                db.Data.Remove(existentData);
-                db.SaveChanges();
+                switch (side)
+                {
+                    case Side.Left:
+                        existentData.LeftSide = data.LeftSide;
+                        break;
+                    case Side.Right:
+                        existentData.RightSide = data.RightSide;
+                        break;
+                }
             }
-
-            db.Data.Add(data);
+            else
+            {
+                db.Data.Add(data);
+            }
             db.SaveChanges();
         }
 

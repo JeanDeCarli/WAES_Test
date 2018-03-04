@@ -4,9 +4,9 @@
     <EntitySetMapping Name="Data">
       <EntityTypeMapping TypeName="WAESAssignmentDBModel.Data">
         <MappingFragment StoreEntitySet="Data">
+          <ScalarProperty Name="RightSide" ColumnName="RightSide" />
+          <ScalarProperty Name="LeftSide" ColumnName="LeftSide" />
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="EncodedJSON" ColumnName="EncodedJSON" />
-          <ScalarProperty Name="Side" ColumnName="Side" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

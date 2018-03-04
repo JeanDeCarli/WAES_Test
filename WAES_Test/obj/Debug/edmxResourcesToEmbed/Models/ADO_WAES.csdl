@@ -5,8 +5,8 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" />
-    <Property Name="EncodedJSON" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Side" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="LeftSide" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="RightSide" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityContainer Name="WAESAssignmentDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Data" EntityType="Self.Data" />

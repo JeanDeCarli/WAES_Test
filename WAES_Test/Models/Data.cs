@@ -15,7 +15,7 @@ namespace WAES_Test.Models
     public partial class Data
     {
         public int Id { get; set; }
-        public string EncodedJSON { get; set; }
-        public string Side { get; set; }
+        public string LeftSide { get; set; }
+        public string RightSide { get; set; }
     }
 }

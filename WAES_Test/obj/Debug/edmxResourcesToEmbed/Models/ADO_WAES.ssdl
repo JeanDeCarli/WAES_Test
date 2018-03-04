@@ -5,8 +5,8 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" Nullable="false" />
-    <Property Name="EncodedJSON" Type="varchar(max)" Nullable="false" />
-    <Property Name="Side" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="LeftSide" Type="varchar(max)" />
+    <Property Name="RightSide" Type="varchar(max)" />
   </EntityType>
   <EntityContainer Name="WAESAssignmentDBModelStoreContainer">
     <EntitySet Name="Data" EntityType="Self.Data" Schema="dbo" store:Type="Tables" />
