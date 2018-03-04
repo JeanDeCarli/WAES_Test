@@ -12,17 +12,18 @@ using WAES_Test.Models;
 
 namespace WAES_Test.Controllers
 {
+    [RoutePrefix("v1/diff")]
     public class DataController : ApiController
     {
         private WAESAssignmentDBEntities db = new WAESAssignmentDBEntities();
 
-        // GET: api/Data
+        [Route("all")]
         public IQueryable<Data> GetData()
         {
             return db.Data;
         }
 
-        // GET: api/Data/5
+        [Route("{id}")]
         [ResponseType(typeof(Data))]
         public IHttpActionResult GetData(int id)
         {
@@ -70,14 +71,16 @@ namespace WAES_Test.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Data
+        [Route("{id}/left")]
         [ResponseType(typeof(Data))]
-        public IHttpActionResult PostData(Data data)
+        public IHttpActionResult InsertLeft(int id, [FromBody] string content)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+
+            var data = new Data() {Id = id, EncodedJSON = content, Side = "Left" };
 
             db.Data.Add(data);
 
