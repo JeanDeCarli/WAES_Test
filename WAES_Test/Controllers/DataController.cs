@@ -8,6 +8,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using WAES_Test.Helper;
 using WAES_Test.Models;
 
 namespace WAES_Test.Controllers
@@ -36,57 +37,22 @@ namespace WAES_Test.Controllers
             return Ok(data);
         }
 
-        // PUT: api/Data/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutData(int id, Data data)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != data.Id)
-            {
-                return BadRequest();
-            }
-
-            db.Entry(data).State = EntityState.Modified;
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!DataExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return StatusCode(HttpStatusCode.NoContent);
-        }
-
         [Route("{id}/left")]
         [HttpPost]
         public IHttpActionResult InsertLeft(int id, HttpRequestMessage content)
         {
+            // Validate if there is a BadRequest
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
-            var data = new Data() {Id = id, EncodedJSON = content.Content.ReadAsStringAsync().Result, Side = "Left" };
-
-            db.Data.Add(data);
+            // Creates the object with all the data needed
+            var data = new Data() { Id = id, EncodedJSON = content.Content.ReadAsStringAsync().Result, Side = APIsHelper.Side.Left.ToString() };
 
             try
             {
-                db.SaveChanges();
+                // Call the method that insert the record inside the database
+                APIsHelper.InsertData(data);
             }
             catch (DbUpdateException)
             {
@@ -100,23 +66,39 @@ namespace WAES_Test.Controllers
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = data.Id }, data);
+            return StatusCode(HttpStatusCode.Created);
         }
 
-        // DELETE: api/Data/5
-        [ResponseType(typeof(Data))]
-        public IHttpActionResult DeleteData(int id)
+        [Route("{id}/right")]
+        [HttpPost]
+        public IHttpActionResult InsertRight(int id, HttpRequestMessage content)
         {
-            Data data = db.Data.Find(id);
-            if (data == null)
+            // Validate if there is a BadRequest
+            if (!ModelState.IsValid)
             {
-                return NotFound();
+                return BadRequest(ModelState);
+            }
+            // Creates the object with all the data needed
+            var data = new Data() { Id = id, EncodedJSON = content.Content.ReadAsStringAsync().Result, Side = APIsHelper.Side.Right.ToString() };
+
+            try
+            {
+                // Call the method that insert the record inside the database
+                APIsHelper.InsertData(data);
+            }
+            catch (DbUpdateException)
+            {
+                if (DataExists(data.Id))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
             }
 
-            db.Data.Remove(data);
-            db.SaveChanges();
-
-            return Ok(data);
+            return StatusCode(HttpStatusCode.Created);
         }
 
         protected override void Dispose(bool disposing)
