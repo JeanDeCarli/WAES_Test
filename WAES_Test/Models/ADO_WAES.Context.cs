@@ -13,7 +13,7 @@ namespace WAES_Test.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class WAESAssignmentDBEntities : DbContext
+    public partial class WAESAssignmentDBEntities : DbContext, IWAESAssignmentDBEntities
     {
         public WAESAssignmentDBEntities()
             : base("name=WAESAssignmentDBEntities")
@@ -26,5 +26,10 @@ namespace WAES_Test.Models
         }
     
         public virtual DbSet<Data> Data { get; set; }
+
+        public void MarkAsModified(Data item)
+        {
+            Entry(item).State = EntityState.Modified;
+        }
     }
 }

@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WAES_Test", "WAES_Test\WAES_Test.csproj", "{AEBCC12A-C324-4447-93D7-25A2AC295AA9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WAES_UnitTest", "WAES_UnitTest\WAES_UnitTest.csproj", "{543162A6-FDF6-4E0E-B3A7-70E272A5B98F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AEBCC12A-C324-4447-93D7-25A2AC295AA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEBCC12A-C324-4447-93D7-25A2AC295AA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEBCC12A-C324-4447-93D7-25A2AC295AA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{543162A6-FDF6-4E0E-B3A7-70E272A5B98F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{543162A6-FDF6-4E0E-B3A7-70E272A5B98F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{543162A6-FDF6-4E0E-B3A7-70E272A5B98F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{543162A6-FDF6-4E0E-B3A7-70E272A5B98F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

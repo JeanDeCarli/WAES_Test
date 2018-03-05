@@ -211,6 +211,7 @@
     <Compile Include="Models\Data.cs">
       <DependentUpon>ADO_WAES.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\IWAESAssignmentDBEntities.cs" />
     <Compile Include="Models\ResultDiff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

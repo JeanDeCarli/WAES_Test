@@ -19,7 +19,14 @@ namespace WAES_Test.Controllers
     [RoutePrefix("v1/diff")]
     public class DataController : ApiController
     {
-        private WAESAssignmentDBEntities db = new WAESAssignmentDBEntities(); // Creates the object to interact with the database using Entity Framework
+        private IWAESAssignmentDBEntities db = new WAESAssignmentDBEntities(); // Creates the object to interact with the database using Entity Framework
+
+        public DataController() { }
+
+        public DataController(IWAESAssignmentDBEntities context)
+        {
+            db = context;
+        }
 
         /// <summary>
         /// Returns the comparison of 2 Jsons based on the id received by parameter
