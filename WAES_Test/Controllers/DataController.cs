@@ -1,4 +1,6 @@
-﻿using System;
+﻿using JsonDiffPatchDotNet;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -6,6 +8,7 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Web.Http;
 using System.Web.Http.Description;
 using WAES_Test.Helper;
@@ -26,15 +29,15 @@ namespace WAES_Test.Controllers
 
         [Route("{id}")]
         [ResponseType(typeof(Data))]
+        [HttpGet]
         public IHttpActionResult DiffContent(int id)
         {
             Data data = db.Data.Find(id);
-            if (data == null)
-            {
-                return NotFound();
-            }
 
-            return Ok(data);
+            if (data == null)
+                return NotFound();
+
+            return Ok(APIsHelper.GetDiff(data));
         }
 
         [Route("{id}/left")]
