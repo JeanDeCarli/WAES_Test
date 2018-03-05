@@ -19,21 +19,33 @@ namespace WAES_Test.Controllers
     [RoutePrefix("v1/diff")]
     public class DataController : ApiController
     {
-        private WAESAssignmentDBEntities db = new WAESAssignmentDBEntities();
-        
+        private WAESAssignmentDBEntities db = new WAESAssignmentDBEntities(); // Creates the object to interact with the database using Entity Framework
+
+        /// <summary>
+        /// Returns the comparison of 2 Jsons based on the id received by parameter
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [Route("{id}")]
         [ResponseType(typeof(Data))]
         [HttpGet]
         public IHttpActionResult DiffContent(int id)
         {
-            Data data = db.Data.Find(id);
+            Data data = db.Data.Find(id); // Get the saved left and right encoded Jsons
 
+            // Validate if the data is null
             if (data == null)
                 return NotFound();
 
-            return Ok(APIsHelper.GetDiff(data));
+            return Ok(APIsHelper.GetDiff(data)); // Call the method responsable to get the comparison
         }
 
+        /// <summary>
+        /// Inserts the LEFT Json in the record based on the id received by parameter
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="content"></param>
+        /// <returns></returns>
         [Route("{id}/left")]
         [HttpPost]
         public IHttpActionResult InsertLeft(int id, HttpRequestMessage content)
@@ -43,29 +55,27 @@ namespace WAES_Test.Controllers
             {
                 return BadRequest(ModelState);
             }
-            // Creates the object with all the data needed
-            var data = new Data() { Id = id, LeftSide = content.Content.ReadAsStringAsync().Result };
+            
+            var data = new Data() { Id = id, LeftSide = content.Content.ReadAsStringAsync().Result }; // Creates the object with all the data needed
 
             try
             {
-                // Call the method that insert the record inside the database
-                APIsHelper.InsertData(data, APIsHelper.Side.Left);
+                APIsHelper.InsertData(data, APIsHelper.Side.Left); // Call the method that insert the record inside the database
             }
-            catch (DbUpdateException)
+            catch (Exception ex)
             {
-                if (DataExists(data.Id))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
+                throw ex;
             }
 
             return StatusCode(HttpStatusCode.Created);
         }
 
+        /// <summary>
+        /// Inserts the RIGHT Json in the record based on the id received by parameter
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="content"></param>
+        /// <returns></returns>
         [Route("{id}/right")]
         [HttpPost]
         public IHttpActionResult InsertRight(int id, HttpRequestMessage content)
@@ -75,24 +85,15 @@ namespace WAES_Test.Controllers
             {
                 return BadRequest(ModelState);
             }
-            // Creates the object with all the data needed
-            var data = new Data() { Id = id, RightSide = content.Content.ReadAsStringAsync().Result };
+            var data = new Data() { Id = id, RightSide = content.Content.ReadAsStringAsync().Result }; // Creates the object with all the data needed
 
             try
             {
-                // Call the method that insert the record inside the database
-                APIsHelper.InsertData(data, APIsHelper.Side.Right);
+                APIsHelper.InsertData(data, APIsHelper.Side.Right); // Call the method that insert the record inside the database
             }
-            catch (DbUpdateException)
+            catch (Exception ex)
             {
-                if (DataExists(data.Id))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
+                throw ex;
             }
 
             return StatusCode(HttpStatusCode.Created);
@@ -105,11 +106,6 @@ namespace WAES_Test.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
-
-        private bool DataExists(int id)
-        {
-            return db.Data.Count(e => e.Id == id) > 0;
         }
     }
 }
