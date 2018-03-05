@@ -32,8 +32,8 @@ C:\Projects\WAES_Test\WAES_Test\bin\EntityFramework.SqlServer.xml
 C:\Projects\WAES_Test\WAES_Test\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Projects\WAES_Test\WAES_Test\bin\Newtonsoft.Json.xml
 C:\Projects\WAES_Test\WAES_Test\bin\System.Net.Http.Formatting.xml
-C:\Projects\WAES_Test\WAES_Test\bin\System.Web.Helpers.xml
 C:\Projects\WAES_Test\WAES_Test\bin\System.Web.Http.xml
+C:\Projects\WAES_Test\WAES_Test\bin\System.Web.Helpers.xml
 C:\Projects\WAES_Test\WAES_Test\bin\System.Web.Http.WebHost.xml
 C:\Projects\WAES_Test\WAES_Test\bin\System.Web.Mvc.xml
 C:\Projects\WAES_Test\WAES_Test\bin\System.Web.Optimization.xml
@@ -47,6 +47,7 @@ C:\Projects\WAES_Test\WAES_Test\bin\Microsoft.AI.DependencyCollector.xml
 C:\Projects\WAES_Test\WAES_Test\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Projects\WAES_Test\WAES_Test\bin\Microsoft.AI.WindowsServer.xml
 C:\Projects\WAES_Test\WAES_Test\bin\Microsoft.AI.Web.xml
+C:\Projects\WAES_Test\WAES_Test\obj\Debug\WAES_Test.csprojResolveAssemblyReference.cache
 C:\Projects\WAES_Test\WAES_Test\obj\Debug\WAES_Test.csproj.CoreCompileInputs.cache
 C:\Projects\WAES_Test\WAES_Test\obj\Debug\WAES_Test.dll
 C:\Projects\WAES_Test\WAES_Test\obj\Debug\WAES_Test.pdb

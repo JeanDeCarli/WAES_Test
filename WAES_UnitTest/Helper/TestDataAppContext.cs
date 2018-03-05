@@ -1,5 +1,4 @@
-﻿using System;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using WAES_Test.Models;
 
 namespace WAES_UnitTest.Helper

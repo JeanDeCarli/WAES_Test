@@ -30,9 +30,9 @@ namespace WAES_Test.Helper
         /// </summary>
         /// <param name="data"></param>
         /// <param name="side"></param>
-        public static void InsertData(Data data, Side side)
+        public static void InsertData(Data data, Side side, IWAESAssignmentDBEntities context)
         {
-            var db = new WAESAssignmentDBEntities(); // Create the object to interact with the database using Entity Framework
+            var db = context; // Create the object to interact with the database using Entity Framework
             var existentData = db.Data.Find(data.Id); // Get the record based on the ID
 
             // Validate if the record exists, if so update it

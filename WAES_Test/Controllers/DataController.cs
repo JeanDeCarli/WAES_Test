@@ -67,7 +67,7 @@ namespace WAES_Test.Controllers
 
             try
             {
-                APIsHelper.InsertData(data, APIsHelper.Side.Left); // Call the method that insert the record inside the database
+                APIsHelper.InsertData(data, APIsHelper.Side.Left, db); // Call the method that insert the record inside the database
             }
             catch (Exception ex)
             {
@@ -96,7 +96,7 @@ namespace WAES_Test.Controllers
 
             try
             {
-                APIsHelper.InsertData(data, APIsHelper.Side.Right); // Call the method that insert the record inside the database
+                APIsHelper.InsertData(data, APIsHelper.Side.Right, db); // Call the method that insert the record inside the database
             }
             catch (Exception ex)
             {
