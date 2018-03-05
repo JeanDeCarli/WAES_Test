@@ -20,13 +20,7 @@ namespace WAES_Test.Controllers
     public class DataController : ApiController
     {
         private WAESAssignmentDBEntities db = new WAESAssignmentDBEntities();
-
-        [Route("all")]
-        public IQueryable<Data> GetData()
-        {
-            return db.Data;
-        }
-
+        
         [Route("{id}")]
         [ResponseType(typeof(Data))]
         [HttpGet]
