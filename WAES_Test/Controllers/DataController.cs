@@ -44,6 +44,9 @@ namespace WAES_Test.Controllers
             if (data == null)
                 return NotFound();
 
+            if (string.IsNullOrEmpty(data.LeftSide) || string.IsNullOrEmpty(data.RightSide))
+                return BadRequest(string.Format("There is a side data missing, please provide the left and right data in the record ID: {0}", data.Id));
+
             return Ok(APIsHelper.GetDiff(data)); // Call the method responsable to get the comparison
         }
 
@@ -78,6 +81,7 @@ namespace WAES_Test.Controllers
                 throw ex;
             }
 
+            data = db.Data.Find(data.Id);
             return Ok(data);
         }
 
@@ -111,6 +115,7 @@ namespace WAES_Test.Controllers
                 throw ex;
             }
 
+            data = db.Data.Find(data.Id);
             return Ok(data);
         }
         

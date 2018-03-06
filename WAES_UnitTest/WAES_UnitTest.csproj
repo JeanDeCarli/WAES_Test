@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\DataControllerTests.cs" />
+    <Compile Include="Helper\Enums.cs" />
     <Compile Include="Helper\TestDataAppContext.cs" />
     <Compile Include="Helper\TestDbSet.cs" />
     <Compile Include="Helper\TestDataDbSet.cs" />
