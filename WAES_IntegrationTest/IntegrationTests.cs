@@ -24,6 +24,7 @@ namespace WAES_IntegrationTest
         static HttpClient client = new HttpClient();
 
         [Test]
+        [Category("Integration")]
         public async Task ValidateLeftEndpointReturnsOKwhenSuccess()
         {
             //Arrange
@@ -39,6 +40,7 @@ namespace WAES_IntegrationTest
         }
 
         [Test]
+        [Category("Integration")]
         public async Task ValidateRightEndpointReturnsOKwhenSuccess()
         {
             //Arrange
@@ -54,6 +56,7 @@ namespace WAES_IntegrationTest
         }
 
         [Test]
+        [Category("Integration")]
         public async Task ValidateDiffEndpointSameData()
         {
             //Arrange
@@ -80,6 +83,7 @@ namespace WAES_IntegrationTest
         }
 
         [Test]
+        [Category("Integration")]
         public async Task ValidateDiffEndpointSameSizeDifferentData()
         {
             //Arrange
@@ -107,6 +111,7 @@ namespace WAES_IntegrationTest
         }
 
         [Test]
+        [Category("Integration")]
         public async Task ValidateDiffEndpointDifferentSizeAndData()
         {
             //Arrange

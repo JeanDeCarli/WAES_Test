@@ -38,6 +38,7 @@ namespace WAES_Test.Controllers.Tests
 
         #region UnitTests
         [TestMethod]
+        [TestCategory("Unit")]
         public void InsertLeftProperly()
         {
             //Arrange
@@ -55,6 +56,7 @@ namespace WAES_Test.Controllers.Tests
         }
 
         [TestMethod]
+        [TestCategory("Unit")]
         public void InsertNullLeft()
         {
             //Arrange
@@ -69,6 +71,7 @@ namespace WAES_Test.Controllers.Tests
         }
 
         [TestMethod]
+        [TestCategory("Unit")]
         public void InsertRightProperly()
         {
             //Arrange
@@ -86,6 +89,7 @@ namespace WAES_Test.Controllers.Tests
         }
 
         [TestMethod]
+        [TestCategory("Unit")]
         public void InsertNullRight()
         {
             //Arrange
@@ -100,6 +104,7 @@ namespace WAES_Test.Controllers.Tests
         }
 
         [TestMethod]
+        [TestCategory("Unit")]
         public void ValidateEqualSides()
         {
             //Arrange
@@ -116,6 +121,7 @@ namespace WAES_Test.Controllers.Tests
         }
 
         [TestMethod]
+        [TestCategory("Unit")]
         public void ValidateEqualSizeDifferentContent()
         {
             //Arrange
@@ -132,6 +138,7 @@ namespace WAES_Test.Controllers.Tests
         }
 
         [TestMethod]
+        [TestCategory("Unit")]
         public void ValidateDifferentSizeAndContent()
         {
             //Arrange
@@ -148,6 +155,7 @@ namespace WAES_Test.Controllers.Tests
         }
 
         [TestMethod]
+        [TestCategory("Unit")]
         public void DiffWithOnlyLeftSide()
         {
             //Arrange
@@ -164,6 +172,7 @@ namespace WAES_Test.Controllers.Tests
         }
 
         [TestMethod]
+        [TestCategory("Unit")]
         public void DiffWithOnlyRightSide()
         {
             //Arrange
@@ -180,6 +189,7 @@ namespace WAES_Test.Controllers.Tests
         }
 
         [TestMethod]
+        [TestCategory("Unit")]
         public void DiffNonexistentId()
         {
             //Act
