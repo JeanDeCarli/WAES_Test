@@ -69,6 +69,7 @@
     <Compile Include="Helper\TestDataAppContext.cs" />
     <Compile Include="Helper\TestDbSet.cs" />
     <Compile Include="Helper\TestDataDbSet.cs" />
+    <Compile Include="Helper\TestValidations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

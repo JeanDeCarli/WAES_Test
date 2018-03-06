@@ -57,6 +57,10 @@ namespace WAES_Test.Controllers
         [HttpPost]
         public IHttpActionResult InsertLeft(int id, HttpRequestMessage content)
         {
+            // Validate if the content is null
+            if (content.Content == null || string.IsNullOrEmpty(content.Content.ReadAsStringAsync().Result))
+                return BadRequest("Please provide a JSON base64 encoded binary data");
+
             // Validate if there is a BadRequest
             if (!ModelState.IsValid)
             {
@@ -87,6 +91,10 @@ namespace WAES_Test.Controllers
         [HttpPost]
         public IHttpActionResult InsertRight(int id, HttpRequestMessage content)
         {
+            // Validate if the content is null
+            if (content.Content == null || string.IsNullOrEmpty(content.Content.ReadAsStringAsync().Result))
+                return BadRequest("Please provide a JSON base64 encoded binary data");
+
             // Validate if there is a BadRequest
             if (!ModelState.IsValid)
             {
