@@ -74,7 +74,7 @@ namespace WAES_Test.Controllers
                 throw ex;
             }
 
-            return StatusCode(HttpStatusCode.Created);
+            return Ok(data);
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace WAES_Test.Controllers
                 throw ex;
             }
 
-            return StatusCode(HttpStatusCode.Created);
+            return Ok(data);
         }
         
         protected override void Dispose(bool disposing)
