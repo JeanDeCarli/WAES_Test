@@ -57,12 +57,13 @@ namespace WAES_IntegrationTest
         public async Task ValidateDiffEndpointSameData()
         {
             //Arrange
-            var content = new StringContent(item3, UnicodeEncoding.UTF8, "application/json");
+            var contentLeft = new StringContent(item3, UnicodeEncoding.UTF8, "application/json");
+            var contentRight = new StringContent(item3, UnicodeEncoding.UTF8, "application/json");
             HttpResponseMessage responseLeft = await client.PostAsync(
-                string.Format("{0}/{1}/{2}", baseURL, id, left), content);
+                string.Format("{0}/{1}/{2}", baseURL, id, left), contentLeft);
             responseLeft.EnsureSuccessStatusCode();
             HttpResponseMessage responseRight = await client.PostAsync(
-                string.Format("{0}/{1}/{2}", baseURL, id, right), content);
+                string.Format("{0}/{1}/{2}", baseURL, id, right), contentRight);
             responseRight.EnsureSuccessStatusCode();
 
             // Act

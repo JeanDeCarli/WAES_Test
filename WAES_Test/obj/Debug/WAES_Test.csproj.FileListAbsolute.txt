@@ -50,4 +50,3 @@ C:\Projects\WAES_Test\WAES_Test\bin\Microsoft.AI.Web.xml
 C:\Projects\WAES_Test\WAES_Test\obj\Debug\WAES_Test.csproj.CoreCompileInputs.cache
 C:\Projects\WAES_Test\WAES_Test\obj\Debug\WAES_Test.dll
 C:\Projects\WAES_Test\WAES_Test\obj\Debug\WAES_Test.pdb
-C:\Projects\WAES_Test\WAES_Test\obj\Debug\WAES_Test.csprojResolveAssemblyReference.cache
