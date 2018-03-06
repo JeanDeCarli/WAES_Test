@@ -39,6 +39,7 @@ namespace WAES_Test.Controllers.Tests
         #region UnitTests
         [TestMethod]
         [TestCategory("Unit")]
+        [Description("Validate if the encoded Json can be added in the left position")]
         public void InsertLeftProperly()
         {
             //Arrange
@@ -57,6 +58,7 @@ namespace WAES_Test.Controllers.Tests
 
         [TestMethod]
         [TestCategory("Unit")]
+        [Description("Validate the response of the left post method when sending a null parameter")]
         public void InsertNullLeft()
         {
             //Arrange
@@ -72,6 +74,7 @@ namespace WAES_Test.Controllers.Tests
 
         [TestMethod]
         [TestCategory("Unit")]
+        [Description("Validate if the encoded Json can be added in the right position")]
         public void InsertRightProperly()
         {
             //Arrange
@@ -90,6 +93,7 @@ namespace WAES_Test.Controllers.Tests
 
         [TestMethod]
         [TestCategory("Unit")]
+        [Description("Validate the response of the right post method when sending a null parameter")]
         public void InsertNullRight()
         {
             //Arrange
@@ -105,6 +109,7 @@ namespace WAES_Test.Controllers.Tests
 
         [TestMethod]
         [TestCategory("Unit")]
+        [Description("Validate if the Get method returns the diff properly when left json is equals to right json")]
         public void ValidateEqualSides()
         {
             //Arrange
@@ -122,6 +127,7 @@ namespace WAES_Test.Controllers.Tests
 
         [TestMethod]
         [TestCategory("Unit")]
+        [Description("Validate if the Get method returns the diff properly when the left and right json have the same size but different content")]
         public void ValidateEqualSizeDifferentContent()
         {
             //Arrange
@@ -139,6 +145,7 @@ namespace WAES_Test.Controllers.Tests
 
         [TestMethod]
         [TestCategory("Unit")]
+        [Description("Validate if the Get method returns the diff properly when the left and right json are different")]
         public void ValidateDifferentSizeAndContent()
         {
             //Arrange
@@ -156,6 +163,7 @@ namespace WAES_Test.Controllers.Tests
 
         [TestMethod]
         [TestCategory("Unit")]
+        [Description("Validate the behaviour of the Get method when it tries to diff only left json")]
         public void DiffWithOnlyLeftSide()
         {
             //Arrange
@@ -173,6 +181,7 @@ namespace WAES_Test.Controllers.Tests
 
         [TestMethod]
         [TestCategory("Unit")]
+        [Description("Validate the behaviour of the Get method when it tries to diff only right json")]
         public void DiffWithOnlyRightSide()
         {
             //Arrange
@@ -190,6 +199,7 @@ namespace WAES_Test.Controllers.Tests
 
         [TestMethod]
         [TestCategory("Unit")]
+        [Description("Validate the behaviour of the Get method sending a nonexistent ID")]
         public void DiffNonexistentId()
         {
             //Act

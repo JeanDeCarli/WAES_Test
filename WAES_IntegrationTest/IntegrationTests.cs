@@ -25,6 +25,7 @@ namespace WAES_IntegrationTest
 
         [Test]
         [Category("Integration")]
+        [Description("Validate if the left endpoint is returning the right status code")]
         public async Task ValidateLeftEndpointReturnsOKwhenSuccess()
         {
             //Arrange
@@ -41,6 +42,7 @@ namespace WAES_IntegrationTest
 
         [Test]
         [Category("Integration")]
+        [Description("Validate if the right endpoint is returning the right status code")]
         public async Task ValidateRightEndpointReturnsOKwhenSuccess()
         {
             //Arrange
@@ -57,6 +59,7 @@ namespace WAES_IntegrationTest
 
         [Test]
         [Category("Integration")]
+        [Description("Validate if the diff endpoint is returning the right object when sending the same json to left and right side")]
         public async Task ValidateDiffEndpointSameData()
         {
             //Arrange
@@ -84,6 +87,7 @@ namespace WAES_IntegrationTest
 
         [Test]
         [Category("Integration")]
+        [Description("Validate if the diff endpoint is returning the right object when sending the jsons with the same size but different data")]
         public async Task ValidateDiffEndpointSameSizeDifferentData()
         {
             //Arrange
@@ -112,6 +116,7 @@ namespace WAES_IntegrationTest
 
         [Test]
         [Category("Integration")]
+        [Description("Validate if the diff endpoint is returning the right object when sending completely different jsons")]
         public async Task ValidateDiffEndpointDifferentSizeAndData()
         {
             //Arrange
