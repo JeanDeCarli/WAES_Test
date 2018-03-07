@@ -37,19 +37,24 @@ There are 2 different ways to consume those endpoints with postman, we can use t
 
 1. Use the URL as localhost, please note that the port might change depends on your IIS express
 2. also add the route v1/diff/{id}/left
-	2.1.  --------------> Image of postman insert left
+
+	![Alt text](GitImages/PostmanPostLeft.PNG?raw=true "Left Post endpoint")
+	
 3. Add the content as an encoded Json, for example: ew0KCSJhZ2UiOjI2LA0KCSJuYW1lIjoiSmVhbiIsDQoJIm1lc3NhZ2UiOiAiV0FFUyINCn0=
 
 #### Right Endpoint:
 1. Use the URL as localhost, please note that the port might change depends on your IIS express
 2. also add the route v1/diff/{id}/right
-	2.1.  --------------> Image of postman insert right
+
+![Alt text](GitImages/PostmanPostRight.PNG?raw=true "Right Post endpoint")
+
 3. Add the content as an encoded Json, for example: ew0KCSJhZ2UiOjI2LA0KCSJuYW1lIjoiSmVhbiIsDQoJIm1lc3NhZ2UiOiAiV0FFUyINCn0=
 
 #### Diff Endpoint:
 1. Use the URL as localhost, please note that the port might change depends on your IIS express
 2. also add the route v1/diff/{id}
-	3.  --------------> Image of postman diff
+
+![Alt text](GitImages/PostmanDiff.PNG?raw=true "Get endpoint")
 
 ### Running on Azure:
 To run the application pointing to Azure is basicaly the same of running locally, the only difference is the base URL that needs to be changed by waestestjean.azurewebsites.net
@@ -61,9 +66,15 @@ So to call the endpoints on Azure use:
 ## Running Unit tests
 The unit tests can be triggerd on the TestExplorer window inside visual studio.
 In order to test the methods without change any data in the database was created an abstraction of the data base context to moq the information needed.
-  --------------> Image of the test explorer
-The unit tests was also configured into VSTS and Azure as a Continuous integrations to run the unit tests on every commit -> push in git.
-  --------------> Image of the VSTS build test result
+
+![Alt text](GitImages/TestsPassing.PNG?raw=true "Unit tests passing")
+
+The unit tests was also configured into VSTS and Azure as a Continuous integrations to run the unit tests on every commit --> push in git.
+
+![Alt text](GitImages/AzureBuild.PNG?raw=true "CD")
+
+![Alt text](GitImages/UnitTestsPassinOnCI.PNG?raw=true "CI")
+
 ## Running Integration tests
 The integration tests also can be triggered in the TestExplorer windows inside the visual studio
 on the oposit of the unit test, the integration test call the API`s methods usin an HTTP Client to test the integration with the other methods and also the database.
